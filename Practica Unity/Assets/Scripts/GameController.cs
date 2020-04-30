@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
     {
         imagen2 = imagen;
         muertescript = canvas.GetComponent<Muerte>();
+        Debug.Log(muertescript);
         gamecontroller = this;
         if (posiciondelarma.GetComponentInChildren<ControladorArma>() != null)
         {
@@ -46,6 +47,12 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (imagen2.active == true)
+        {
+            this.transform.GetChild(0).parent = null;
+            this.enabled = false;
+
+        }
         //Si pulsas el botón de disparar, disparas una bala
         if (puedeDisparar && Input.GetMouseButtonDown(0))
         {

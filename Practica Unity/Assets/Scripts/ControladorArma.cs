@@ -10,17 +10,17 @@ public class ControladorArma : MonoBehaviour
     public bool recargando = false;
 
     private Rigidbody rigibody;
-    private Collider collider;
+    private Collider coll;
 
     public float tiempoderecarga = .3f;
-    public AudioSource audio;
+    public AudioSource song;
     public AudioClip disparo;
     private void Start()
     {
-        audio = this.transform.GetComponentInParent<AudioSource>();
+        song = this.transform.GetComponentInParent<AudioSource>();
 
         rigibody = GetComponent<Rigidbody>();
-        collider = GetComponent<Collider>();
+        coll = GetComponent<Collider>();
 
         CambiarEstado();
     }
@@ -33,7 +33,7 @@ public class ControladorArma : MonoBehaviour
         {
             rigibody.isKinematic = (GameController.gamecontroller.arma == this) ? true : false;
             rigibody.interpolation = (GameController.gamecontroller.arma == this) ? RigidbodyInterpolation.None : RigidbodyInterpolation.Interpolate;
-            collider.isTrigger = (GameController.gamecontroller.arma == this);
+            coll.isTrigger = (GameController.gamecontroller.arma == this);
         }
     }
 
@@ -51,7 +51,7 @@ public class ControladorArma : MonoBehaviour
             GameObject bala = Instantiate(GameController.gamecontroller.balaprefab, posicion, rotacion);
             bala.GetComponent<MovimientoBala>().enemigo = nombre;
 
-            audio.PlayOneShot(disparo);
+            song.PlayOneShot(disparo);
 
             Debug.Log(bala.transform.position);
             if (GetComponentInChildren<ParticleSystem>() != null)
@@ -64,7 +64,7 @@ public class ControladorArma : MonoBehaviour
         }
         else if (!recargando)
         {
-            audio.PlayOneShot(disparo);
+            song.PlayOneShot(disparo);
             GameObject bala = Instantiate(GameController.gamecontroller.balaprefab, posicion, rotacion);
             bala.GetComponent<MovimientoBala>().enemigo = null;
 
@@ -127,7 +127,7 @@ public class ControladorArma : MonoBehaviour
         transform.parent = null;
         rigibody.isKinematic = false;
         rigibody.interpolation = RigidbodyInterpolation.Interpolate;
-        collider.isTrigger = false;
+        coll.isTrigger = false;
 
         rigibody.AddForce((Camera.main.transform.position - transform.position) * 2, ForceMode.Impulse);
         rigibody.AddForce(Vector3.up * 1, ForceMode.Impulse);

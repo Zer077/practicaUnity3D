@@ -13,5 +13,6 @@ public class Muerte : MonoBehaviour
     {
         this.texto.text = textomuerte;
 
+
     }
 }

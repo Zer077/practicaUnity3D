@@ -24,13 +24,14 @@ public class MovimientoBala : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject, 4f);
+            Destroy(gameObject, 5f);
 
         }
 
     }
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.CompareTag("Enemy"))
         {
             Rotura rotura = other.gameObject.GetComponent<Rotura>();
@@ -42,7 +43,7 @@ public class MovimientoBala : MonoBehaviour
         else if (other.gameObject.CompareTag("Player") && enemigo != null)
         {
 
-
+            Debug.Log("asdasd");
             switch (enemigo)
             {
 
@@ -67,31 +68,30 @@ public class MovimientoBala : MonoBehaviour
 
                     break;
                 case "black":
-                    GameController.muertescript.ModificarTexto("No soportaste la muerte");
+                    GameController.muertescript.ModificarTexto("No soportaste la muerte de tu familia");
 
                     break;
                 case "grey":
-                    GameController.muertescript.ModificarTexto("TUna enfermedad ha podido contigo");
+                    GameController.muertescript.ModificarTexto("Una enfermedad ha podido contigo");
 
                     break;
 
 
 
             }
-            GameController.imagen2.active = true;
-
+            GameController.imagen2.SetActive(true);
 
 
 
 
         }
 
-        if (GameController.imagen2.active == false)
-        {
 
-            Destroy(gameObject);
 
-        }
+
+
     }
 
+
 }
+

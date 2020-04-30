@@ -58,6 +58,7 @@ public class ControladorEnemigo : MonoBehaviour
         if (!muerto && posicionarma.GetComponentInChildren<ControladorArma>() != null && distancia < vision)
         {
             posicionarma.GetComponentInChildren<ControladorArma>().Disparar(GetComponentInChildren<ParticleSystem>().transform.position, transform.rotation, true, this.name);
+
         }
     }
 
