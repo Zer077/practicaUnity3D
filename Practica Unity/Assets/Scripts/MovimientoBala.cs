@@ -20,7 +20,6 @@ public class MovimientoBala : MonoBehaviour
 
             }
 
-
         }
         else
         {

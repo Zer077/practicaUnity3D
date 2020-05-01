@@ -94,12 +94,12 @@ public class ControladorArma : MonoBehaviour
     public void Lanzar()
     {
         Sequence secuence = DOTween.Sequence();
-        secuence.Append(transform.DOMove(transform.position - transform.forward, .01001f)).SetUpdate(true);
+        secuence.Append(transform.DOMove(transform.position - transform.forward, .01f)).SetUpdate(true);
         secuence.AppendCallback(() => transform.parent = null);
-        secuence.AppendCallback(() => transform.position = Camera.main.transform.position + (Camera.main.transform.right * .1001f));
+        secuence.AppendCallback(() => transform.position = Camera.main.transform.position + (Camera.main.transform.right * .10f));
         secuence.AppendCallback(() => CambiarEstado());
-        secuence.AppendCallback(() => rigibody.AddForce(Camera.main.transform.forward * 10.01f, ForceMode.Impulse));
-        secuence.AppendCallback(() => rigibody.AddTorque(transform.transform.right + transform.transform.up * 20.01f, ForceMode.Impulse));
+        secuence.AppendCallback(() => rigibody.AddForce(Camera.main.transform.forward * 10f, ForceMode.Impulse));
+        secuence.AppendCallback(() => rigibody.AddTorque(transform.transform.right + transform.transform.up * 20f, ForceMode.Impulse));
     }
 
     /// <summary>

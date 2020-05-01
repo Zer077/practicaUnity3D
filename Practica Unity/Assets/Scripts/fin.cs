@@ -9,6 +9,10 @@ public class fin : MonoBehaviour
 
 
 
+        GameController.muertescript.ModificarTexto("Moriste en el hospital al lado de tu mujer, con una sonrisa y mucho amor");
+
+
+        GameController.imagen2.SetActive(true);
 
 
 

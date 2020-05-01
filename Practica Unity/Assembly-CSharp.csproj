@@ -63,9 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\activar.cs" />
-    <Compile Include="Assets\activar2.cs" />
-    <Compile Include="Assets\activar3.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleAudio.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModulePhysics2D.cs" />
@@ -73,13 +70,16 @@
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\DOTween\Modules\DOTweenModuleUtils.cs" />
-    <Compile Include="Assets\fin.cs" />
-    <Compile Include="Assets\Muerte.cs" />
+    <Compile Include="Assets\Scripts\activar.cs" />
+    <Compile Include="Assets\Scripts\activar2.cs" />
+    <Compile Include="Assets\Scripts\activar3.cs" />
     <Compile Include="Assets\Scripts\ControladorArma.cs" />
     <Compile Include="Assets\Scripts\ControladorEnemigo.cs" />
     <Compile Include="Assets\Scripts\ControladorPersonaje.cs" />
+    <Compile Include="Assets\Scripts\fin.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\MovimientoBala.cs" />
+    <Compile Include="Assets\Scripts\Muerte.cs" />
     <Compile Include="Assets\Scripts\Rotura.cs" />
     <None Include="Assets\MegaPack1Lite\RomanCityPack1Lite\README.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
